@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RUTA — Consola de coordinación de entregas</title>
+  <link rel="stylesheet" href="ruta-panel.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="shell header" id="arriba">
+    <div class="brand">
+      <p class="eyebrow">RUTA · datos de ejemplo</p>
+      <h1>Consola de coordinación de entregas</h1>
+      <p class="lede">Detecta retrasos, entiende el estado del día y decide qué atender primero sin revisar cada entrega por separado.</p>
+    </div>
+
+    <nav class="anchor-nav" aria-label="Navegación principal">
+      <a href="#resumen">Resumen</a>
+      <a href="#incidencias">Incidencias</a>
+      <a href="#avance">Avance</a>
+      <a href="#entregas">Entregas</a>
+    </nav>
+  </header>
+
+  <main id="contenido" class="shell layout">
+    <section class="panel summary" id="resumen" aria-labelledby="resumen-titulo">
+      <div class="section-heading compact">
+        <p class="eyebrow">Estado del día</p>
+        <h2 id="resumen-titulo">Lectura inmediata</h2>
+      </div>
+
+      <div class="summary-grid" role="list" aria-label="Indicadores del día">
+        <article class="metric metric-critical" role="listitem">
+          <p class="metric-label">Retrasadas</p>
+          <p class="metric-value">2</p>
+          <p class="metric-note">Casos prioritarios para intervención hoy.</p>
+        </article>
+        <article class="metric" role="listitem">
+          <p class="metric-label">En ruta</p>
+          <p class="metric-value">2</p>
+          <p class="metric-note">Seguimiento normal, sin intervención inmediata.</p>
+        </article>
+        <article class="metric" role="listitem">
+          <p class="metric-label">Programadas</p>
+          <p class="metric-value">2</p>
+          <p class="metric-note">Pendientes de su ventana prevista.</p>
+        </article>
+        <article class="metric metric-success" role="listitem">
+          <p class="metric-label">Completadas</p>
+          <p class="metric-value">2</p>
+          <p class="metric-note">Cerradas dentro de la jornada.</p>
+        </article>
+      </div>
+
+      <div class="summary-foot">
+        <p><strong>Balance operativo:</strong> 8 entregas en total, con 2 incidencias reales que conviene atender antes de revisar el resto.</p>
+        <a class="button-link" href="#incidencias">Ir a incidencias prioritarias</a>
+      </div>
+    </section>
+
+    <section class="panel incidents" id="incidencias" aria-labelledby="incidencias-titulo">
+      <div class="section-heading compact">
+        <p class="eyebrow">Incidencias prioritarias</p>
+        <h2 id="incidencias-titulo">Qué atender primero</h2>
+      </div>
+
+      <div class="incident-group">
+        <p class="group-label">Incidencias</p>
+        <ol class="incident-list">
+          <li class="incident incident-critical">
+            <div>
+              <p class="status status-delayed">Retrasada</p>
+              <h3>E-104 · Centro Norte</h3>
+              <p>ETA 11:10. La parada anterior se alargó y ya comprometió la secuencia del tramo urbano.</p>
+            </div>
+            <dl>
+              <div><dt>Acción sugerida</dt><dd>Confirmar recepción y reordenar la secuencia del sector.</dd></div>
+              <div><dt>Prioridad</dt><dd>Máxima: puede arrastrar la siguiente ruta.</dd></div>
+            </dl>
+          </li>
+          <li class="incident">
+            <div>
+              <p class="status status-delayed">Retrasada</p>
+              <h3>E-107 · Polígono Este</h3>
+              <p>ETA 12:05. La salida fue tardía, pero todavía conserva margen para cerrar el turno sin replanificar todo.</p>
+            </div>
+            <dl>
+              <div><dt>Acción sugerida</dt><dd>Validar ETA y avisar al punto de descarga.</dd></div>
+              <div><dt>Prioridad</dt><dd>Alta: vigilar evolución y margen de cierre.</dd></div>
+            </dl>
+          </li>
+        </ol>
+      </div>
+
+      <div class="incident-group incident-group-observe">
+        <p class="group-label">Observación</p>
+        <ol class="incident-list">
+          <li class="incident">
+            <div>
+              <p class="status status-route">En ruta</p>
+              <h3>E-101 · Distrito Sur</h3>
+              <p>Avance estable con ETA 10:50. Conviene seguirlo, pero no requiere intervención ahora.</p>
+            </div>
+            <dl>
+              <div><dt>Acción sugerida</dt><dd>Solo seguimiento visual.</dd></div>
+              <div><dt>Prioridad</dt><dd>Observación.</dd></div>
+            </dl>
+          </li>
+          <li class="incident">
+            <div>
+              <p class="status status-route">En ruta</p>
+              <h3>E-102 · Barrio Marina</h3>
+              <p>Avance regular con ETA 11:25. Puede cerrar antes de la ventana prevista si no surge desvío.</p>
+            </div>
+            <dl>
+              <div><dt>Acción sugerida</dt><dd>Esperar confirmación de recepción.</dd></div>
+              <div><dt>Prioridad</dt><dd>Observación.</dd></div>
+            </dl>
+          </li>
+          <li class="incident">
+            <div>
+              <p class="status status-scheduled">Programada</p>
+              <h3>E-103 · Parque Logístico</h3>
+              <p>Salida 12:30. Sigue dentro de su ventana prevista y no exige alerta.</p>
+            </div>
+            <dl>
+              <div><dt>Acción sugerida</dt><dd>Preparar recursos y mantener la cita prevista.</dd></div>
+              <div><dt>Prioridad</dt><dd>Observación.</dd></div>
+            </dl>
+          </li>
+          <li class="incident">
+            <div>
+              <p class="status status-scheduled">Programada</p>
+              <h3>E-106 · Terminal Oeste</h3>
+              <p>Salida 13:15. Pendiente de su bloque de carga previa, sin incidencia activa.</p>
+            </div>
+            <dl>
+              <div><dt>Acción sugerida</dt><dd>Revisar preparación antes de la franja.</dd></div>
+              <div><dt>Prioridad</dt><dd>Observación.</dd></div>
+            </dl>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="panel progress" id="avance" aria-labelledby="avance-titulo">
+      <div class="section-heading compact">
+        <p class="eyebrow">Evolución del avance</p>
+        <h2 id="avance-titulo">Ritmo del día</h2>
+      </div>
+
+      <div class="progress-summary">
+        <div class="progress-note-box">
+          <p class="eyebrow">Balance</p>
+          <p><strong>4/8</strong> entregas están cerradas o en tránsito normal; las 2 incidencias requieren atención preferente.</p>
+        </div>
+
+        <svg class="spark" viewBox="0 0 260 92" role="img" aria-label="Micrográfico de avance diario de ejemplo" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="260" height="92" rx="14" fill="#F5F7FB"></rect>
+          <line x1="20" y1="68" x2="240" y2="68" stroke="#D8E0EE" stroke-width="2"></line>
+          <polyline points="20,62 60,60 100,48 140,42 180,36 220,28 240,24" fill="none" stroke="#245BFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <circle cx="20" cy="62" r="4" fill="#245BFF"></circle>
+          <circle cx="60" cy="60" r="4" fill="#245BFF"></circle>
+          <circle cx="100" cy="48" r="4" fill="#245BFF"></circle>
+          <circle cx="140" cy="42" r="4" fill="#245BFF"></circle>
+          <circle cx="180" cy="36" r="4" fill="#245BFF"></circle>
+          <circle cx="220" cy="28" r="4" fill="#245BFF"></circle>
+          <circle cx="240" cy="24" r="4" fill="#245BFF"></circle>
+          <text x="20" y="20" fill="#5C687D" font-family="Inter, system-ui, sans-serif" font-size="11">08:00</text>
+          <text x="214" y="20" fill="#5C687D" font-family="Inter, system-ui, sans-serif" font-size="11">Actual</text>
+        </svg>
+      </div>
+
+      <div class="timeline" aria-label="Secuencia de avance">
+        <div class="step step-done">
+          <span class="step-marker" aria-hidden="true"></span>
+          <div>
+            <p class="step-label">08:00</p>
+            <p>E-105 cierra a las 09:15; E-108 cierra a las 09:45. El arranque mostró 2 completadas y 2 en ruta, sin cerrarlas a la misma hora.</p>
+          </div>
+        </div>
+        <div class="step step-active">
+          <span class="step-marker" aria-hidden="true"></span>
+          <div>
+            <p class="step-label">10:00</p>
+            <p>Se detectan los dos retrasos y se concentra la atención en la secuencia crítica.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-marker" aria-hidden="true"></span>
+          <div>
+            <p class="step-label">12:00</p>
+            <p>Las programadas mantienen su ventana prevista mientras se resuelve la incidencia principal.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-marker" aria-hidden="true"></span>
+          <div>
+            <p class="step-label">15:00</p>
+            <p>Objetivo del turno: cerrar el retraso crítico y estabilizar el resto del flujo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel deliveries" id="entregas" aria-labelledby="entregas-titulo">
+      <div class="section-heading compact">
+        <p class="eyebrow">Detalle de rutas</p>
+        <h2 id="entregas-titulo">Ocho entregas de ejemplo</h2>
+      </div>
+
+      <div class="delivery-grid">
+        <details open class="delivery">
+          <summary>
+            <span class="delivery-id">E-104</span>
+            <span class="status status-delayed">Retrasada</span>
+            <span class="delivery-name">Centro Norte</span>
+            <span class="delivery-meta">ETA 11:10 · 3 bultos</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-02 · tramo urbano</dd></div>
+              <div><dt>Motivo</dt><dd>Espera prolongada en la parada anterior.</dd></div>
+              <div><dt>Próxima acción</dt><dd>Confirmar descarga y liberar secuencia.</dd></div>
+            </dl>
+          </div>
+        </details>
+
+        <details class="delivery">
+          <summary>
+            <span class="delivery-id">E-107</span>
+            <span class="status status-delayed">Retrasada</span>
+            <span class="delivery-name">Polígono Este</span>
+            <span class="delivery-meta">ETA 12:05 · 2 bultos</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-05 · acceso industrial</dd></div>
+              <div><dt>Motivo</dt><dd>Salida tardía desde el punto anterior.</dd></div>
+              <div><dt>Próxima acción</dt><dd>Revisar margen de cierre y notificar destino.</dd></div>
+            </dl>
+          </div>
+        </details>
+
+        <details class="delivery">
+          <summary>
+            <span class="delivery-id">E-101</span>
+            <span class="status status-route">En ruta</span>
+            <span class="delivery-name">Distrito Sur</span>
+            <span class="delivery-meta">ETA 10:50 · 5 bultos</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-01 · trayecto corto</dd></div>
+              <div><dt>Estado</dt><dd>Movimiento estable.</dd></div>
+              <div><dt>Próxima acción</dt><dd>Solo seguimiento visual.</dd></div>
+            </dl>
+          </div>
+        </details>
+
+        <details class="delivery">
+          <summary>
+            <span class="delivery-id">E-102</span>
+            <span class="status status-route">En ruta</span>
+            <span class="delivery-name">Barrio Marina</span>
+            <span class="delivery-meta">ETA 11:25 · 1 bulto</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-03 · franja costera</dd></div>
+              <div><dt>Estado</dt><dd>Avance regular con buen margen.</dd></div>
+              <div><dt>Próxima acción</dt><dd>Esperar confirmación de recepción.</dd></div>
+            </dl>
+          </div>
+        </details>
+
+        <details class="delivery">
+          <summary>
+            <span class="delivery-id">E-103</span>
+            <span class="status status-scheduled">Programada</span>
+            <span class="delivery-name">Parque Logístico</span>
+            <span class="delivery-meta">Salida 12:30 · 4 bultos</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-04 · circuito de media jornada</dd></div>
+              <div><dt>Estado</dt><dd>Esperando ventana de salida.</dd></div>
+              <div><dt>Próxima acción</dt><dd>Validar preparación previa.</dd></div>
+            </dl>
+          </div>
+        </details>
+
+        <details class="delivery">
+          <summary>
+            <span class="delivery-id">E-106</span>
+            <span class="status status-scheduled">Programada</span>
+            <span class="delivery-name">Terminal Oeste</span>
+            <span class="delivery-meta">Salida 13:15 · 6 bultos</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-06 · acceso perimetral</dd></div>
+              <div><dt>Estado</dt><dd>Pendiente de carga previa.</dd></div>
+              <div><dt>Próxima acción</dt><dd>Revisar secuencia antes de salida.</dd></div>
+            </dl>
+          </div>
+        </details>
+
+        <details class="delivery">
+          <summary>
+            <span class="delivery-id">E-105</span>
+            <span class="status status-completed">Completada</span>
+            <span class="delivery-name">Puerto Centro</span>
+            <span class="delivery-meta">Cierra 09:15 · 2 bultos</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-07 · operación temprana</dd></div>
+              <div><dt>Estado</dt><dd>Entrega cerrada con recepción conforme.</dd></div>
+              <div><dt>Registro</dt><dd>Finalizada a las 09:15.</dd></div>
+            </dl>
+          </div>
+        </details>
+
+        <details class="delivery">
+          <summary>
+            <span class="delivery-id">E-108</span>
+            <span class="status status-completed">Completada</span>
+            <span class="delivery-name">Avenida Sur</span>
+            <span class="delivery-meta">Cierra 09:45 · 4 bultos</span>
+          </summary>
+          <div class="delivery-body">
+            <p class="example-tag">Ejemplo ficticio</p>
+            <dl>
+              <div><dt>Ruta</dt><dd>RN-08 · recorrido finalizado</dd></div>
+              <div><dt>Estado</dt><dd>Entrega cerrada sin incidencias.</dd></div>
+              <div><dt>Registro</dt><dd>Finalizada a las 09:45.</dd></div>
+            </dl>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p>Datos de ejemplo para prototipo operativo.</p>
+    <a href="#arriba">Volver arriba</a>
+  </footer>
+</body>
+</html>
