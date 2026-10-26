@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUTA · Panel de entregas</title>
+<link rel="stylesheet" href="ruta-claude.css">
+</head>
+<body>
+<header class="top">
+<div class="top-in">
+<strong class="brand">RUTA</strong>
+<span class="sample">Datos de ejemplo</span>
+<nav aria-label="Secciones">
+<ul>
+<li><a href="#resumen">Resumen</a></li>
+<li><a href="#incidencias">Incidencias</a></li>
+<li><a href="#entregas">Entregas</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main>
+<section id="resumen" aria-labelledby="t-res">
+<h1 id="t-res">Jornada de entregas</h1>
+<ul class="sum">
+<li class="s-late"><a href="#incidencias"><b>2</b><span>Retrasadas</span></a></li>
+<li class="s-route"><a href="#e3"><b>2</b><span>En ruta</span></a></li>
+<li class="s-plan"><a href="#e5"><b>2</b><span>Programadas</span></a></li>
+<li class="s-done"><a href="#e7"><b>2</b><span>Completadas</span></a></li>
+</ul>
+</section>
+
+<section id="incidencias" class="inc" aria-labelledby="t-inc">
+<h2 id="t-inc">Incidencias urgentes <span class="count">2</span></h2>
+<ul>
+<li>
+<div><strong>E-1041 · Retraso de 20 min</strong><p>Tráfico cortado en la ronda norte. Avisar al cliente.</p></div>
+<a class="go" href="#e1">Ver entrega</a>
+</li>
+<li>
+<div><strong>E-1042 · Retraso de 5 min</strong><p>Espera en muelle de carga. Reasignar si supera 15 min.</p></div>
+<a class="go" href="#e2">Ver entrega</a>
+</li>
+</ul>
+</section>
+
+<section id="entregas" aria-labelledby="t-ent">
+<h2 id="t-ent">Todas las entregas <span class="count">8</span></h2>
+<p class="note">Sin incidencias: seis entregas. Despliega cada fila para ver el detalle.</p>
+
+<article id="e1" class="d late"><details>
+<summary><span class="id">E-1041</span><span class="dest">Calle Mayor 12</span><span class="time">10:30</span><span class="chip">Retrasada +20 min</span></summary>
+<dl><dt>Conductor</dt><dd>Marta R.</dd><dt>Paquetes</dt><dd>4</dd><dt>Causa</dt><dd>Tráfico cortado</dd><dt>Nueva hora</dt><dd>10:50</dd></dl>
+</details></article>
+
+<article id="e2" class="d late"><details>
+<summary><span class="id">E-1042</span><span class="dest">Av. del Puerto 88</span><span class="time">10:45</span><span class="chip">Retrasada +5 min</span></summary>
+<dl><dt>Conductor</dt><dd>Iván S.</dd><dt>Paquetes</dt><dd>2</dd><dt>Causa</dt><dd>Espera en muelle</dd><dt>Nueva hora</dt><dd>10:50</dd></dl>
+</details></article>
+
+<article id="e3" class="d route"><details>
+<summary><span class="id">E-1043</span><span class="dest">Plaza Olmo 3</span><span class="time">11:00</span><span class="chip">En ruta</span></summary>
+<dl><dt>Conductor</dt><dd>Lucía P.</dd><dt>Paquetes</dt><dd>1</dd><dt>Paradas previas</dt><dd>2</dd><dt>Llegada estimada</dt><dd>11:00</dd></dl>
+</details></article>
+
+<article id="e4" class="d route"><details>
+<summary><span class="id">E-1044</span><span class="dest">Calle Sauce 27</span><span class="time">11:15</span><span class="chip">En ruta</span></summary>
+<dl><dt>Conductor</dt><dd>Hugo M.</dd><dt>Paquetes</dt><dd>3</dd><dt>Paradas previas</dt><dd>1</dd><dt>Llegada estimada</dt><dd>11:15</dd></dl>
+</details></article>
+
+<article id="e5" class="d plan"><details>
+<summary><span class="id">E-1045</span><span class="dest">Polígono Sur, nave 6</span><span class="time">12:30</span><span class="chip">Programada</span></summary>
+<dl><dt>Conductor</dt><dd>Sin asignar</dd><dt>Paquetes</dt><dd>12</dd><dt>Ventana</dt><dd>12:30–13:00</dd><dt>Nota</dt><dd>Requiere carretilla</dd></dl>
+</details></article>
+
+<article id="e6" class="d plan"><details>
+<summary><span class="id">E-1046</span><span class="dest">Calle Roble 9</span><span class="time">13:15</span><span class="chip">Programada</span></summary>
+<dl><dt>Conductor</dt><dd>Marta R.</dd><dt>Paquetes</dt><dd>1</dd><dt>Ventana</dt><dd>13:00–13:30</dd><dt>Nota</dt><dd>Llamar al llegar</dd></dl>
+</details></article>
+
+<article id="e7" class="d done"><details>
+<summary><span class="id">E-1047</span><span class="dest">Paseo Río 51</span><span class="time">08:40</span><span class="chip">Completada</span></summary>
+<dl><dt>Conductor</dt><dd>Iván S.</dd><dt>Paquetes</dt><dd>2</dd><dt>Entregada</dt><dd>08:38</dd><dt>Recibió</dt><dd>Portería</dd></dl>
+</details></article>
+
+<article id="e8" class="d done"><details>
+<summary><span class="id">E-1048</span><span class="dest">Calle Pino 4</span><span class="time">09:20</span><span class="chip">Completada</span></summary>
+<dl><dt>Conductor</dt><dd>Lucía P.</dd><dt>Paquetes</dt><dd>1</dd><dt>Entregada</dt><dd>09:22</dd><dt>Recibió</dt><dd>Cliente</dd></dl>
+</details></article>
+</section>
+</main>
+</body>
+</html>
