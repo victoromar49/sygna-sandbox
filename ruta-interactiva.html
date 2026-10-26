@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUTA · Consola de entregas</title>
+<link rel="stylesheet" href="ruta-interactiva.css">
+</head>
+<body>
+<header class="top">
+<strong class="brand">RUTA</strong>
+<span class="hint">Datos de ejemplo</span>
+</header>
+<main class="layout">
+<section class="list" aria-labelledby="t-lista">
+<h2 id="t-lista">Entregas de hoy</h2>
+<ul id="lista-entregas">
+<li><button type="button" id="btn-entrega-1" class="row" data-id="1">
+<span class="code">RT-1041</span>
+<span class="dest">Calle Mayor 12, Valencia</span>
+<span class="chip" id="chip-1">En ruta</span></button></li>
+<li><button type="button" id="btn-entrega-2" class="row" data-id="2">
+<span class="code">RT-1042</span>
+<span class="dest">Av. del Puerto 80, Valencia</span>
+<span class="chip" id="chip-2">En ruta</span></button></li>
+</ul>
+</section>
+<section class="detail" aria-labelledby="t-detalle">
+<p class="eyebrow">Entrega seleccionada</p>
+<h1 id="t-detalle"><span id="texto-seleccion">RT-1041</span></h1>
+<p id="texto-destino" class="dest-big"></p>
+<dl class="saved">
+<div><dt>Estado guardado</dt><dd id="texto-estado-guardado"></dd></div>
+<div><dt>Nota guardada</dt><dd id="texto-nota-guardada"></dd></div>
+</dl>
+<div class="edit">
+<p class="label" id="l-estado">Estado</p>
+<div class="seg" role="group" aria-labelledby="l-estado">
+<button type="button" id="btn-estado-en-ruta" data-estado="En ruta" aria-pressed="true">En ruta</button>
+<button type="button" id="btn-estado-entregada" data-estado="Entregada" aria-pressed="false">Entregada</button>
+</div>
+<label class="label" for="campo-nota">Nota operativa</label>
+<textarea id="campo-nota" rows="4" maxlength="200" placeholder="Ej. Entregado en recepción"></textarea>
+<p class="help">Máximo 200 caracteres.</p>
+<button type="button" id="btn-guardar" class="save">Guardar cambios</button>
+<p id="texto-confirmacion" class="confirm" role="status" aria-live="polite">Sin cambios pendientes</p>
+</div>
+</section>
+</main>
+<script src="ruta-interactiva.js"></script>
+</body>
+</html>
