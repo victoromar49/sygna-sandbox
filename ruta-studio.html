@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUTA · Consola de reparto</title>
+<link rel="stylesheet" href="ruta-studio.css">
+</head>
+<body>
+<header class="top">
+  <h1>RUTA</h1>
+  <p class="demo">Datos de demostración</p>
+</header>
+<main class="layout">
+  <nav class="list" aria-label="Entregas">
+    <h2>Entregas de hoy</h2>
+    <button type="button" id="select-RT-1041" class="item" data-id="RT-1041">
+      <img src="assets/studio/delivery-id.svg" alt="" width="24" height="24">
+      <span><strong class="mono">RT-1041</strong><small>Calle Mayor 12 · Paquete pequeño</small></span>
+    </button>
+    <button type="button" id="select-RT-1042" class="item" data-id="RT-1042">
+      <img src="assets/studio/delivery-id.svg" alt="" width="24" height="24">
+      <span><strong class="mono">RT-1042</strong><small>Av. del Puerto 48 · Caja mediana</small></span>
+    </button>
+    <button type="button" id="select-RT-1043" class="item" data-id="RT-1043">
+      <img src="assets/studio/delivery-id.svg" alt="" width="24" height="24">
+      <span><strong class="mono">RT-1043</strong><small>Plaza Norte 3 · Sobre</small></span>
+    </button>
+  </nav>
+  <section class="detail" aria-labelledby="d-title">
+    <div class="head">
+      <img src="assets/studio/delivery-id.svg" alt="Identificar entrega" width="24" height="24">
+      <div>
+        <h2 id="d-title" class="mono">RT-1042</h2>
+        <p id="d-address">Av. del Puerto 48</p>
+      </div>
+    </div>
+    <p class="row">Selección: <strong id="selection-text" class="mono"></strong></p>
+    <p class="row">Estado guardado: <strong id="saved-status"></strong>
+      <img id="status-icon" src="assets/studio/delivery-confirmed.svg" alt="Entrega confirmada" width="24" height="24" hidden></p>
+    <p class="row">Nota guardada: <span id="saved-note"></span></p>
+    <hr>
+    <p class="row">Borrador de estado: <strong id="draft-status"></strong></p>
+    <button type="button" id="toggle-status" class="toggle">Cambiar estado</button>
+    <label for="note">Nota de entrega</label>
+    <textarea id="note" rows="4" maxlength="280"></textarea>
+    <p class="hint"><span id="count">0</span>/280 · <span id="draft-flag"></span></p>
+  </section>
+</main>
+<footer class="bar">
+  <button type="button" id="save" class="save">Guardar</button>
+  <p id="save-msg" role="status">Sin cambios pendientes</p>
+</footer>
+<script src="ruta-studio.js"></script>
+</body>
+</html>
