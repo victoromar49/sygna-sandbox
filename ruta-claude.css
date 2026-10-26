@@ -1,0 +1,52 @@
+:root{--bg:#F6F8FB;--surface:#fff;--text:#16212F;--muted:#4f5d70;--accent:#2563EB;--border:#D8E0EA;--late:#B42318;--late-bg:#FEF0EC;--route:#1D4ED8;--plan:#6B5B00;--done:#17653A;--r:10px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 Inter,system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid #F59E0B;outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;background:var(--text);color:#fff}
+.top-in{max-width:1000px;margin:auto;padding:8px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px}
+.brand{font:700 1.4rem/1 "Arial Narrow",Inter,sans-serif;letter-spacing:.12em}
+.sample{font-size:.75rem;border:1px solid #8ea0b8;border-radius:99px;padding:1px 8px}
+nav{margin-left:auto}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav a{display:block;color:#fff;text-decoration:none;padding:10px 12px;border-radius:6px;font-weight:600}
+nav a:hover{background:#2b3a4f}
+main{max-width:1000px;margin:auto;padding:16px}
+h1{font:700 1.8rem/1.1 "Arial Narrow",Inter,sans-serif;margin:8px 0 12px}
+h2{font:700 1.3rem/1.2 "Arial Narrow",Inter,sans-serif;margin:28px 0 8px;display:flex;gap:8px;align-items:center}
+.count{font:600 .85rem ui-monospace,"IBM Plex Mono",monospace;background:var(--text);color:#fff;border-radius:99px;padding:1px 9px}
+.sum{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sum a{display:flex;flex-direction:column;min-height:72px;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-top:4px solid;border-radius:var(--r);text-decoration:none;color:var(--text)}
+.sum a:hover{background:#eef3fb}
+.sum b{font:700 1.9rem/1 ui-monospace,"IBM Plex Mono",monospace}
+.sum span{font-size:.9rem;font-weight:600}
+.s-late a{border-top-color:var(--late)}.s-route a{border-top-color:var(--route)}.s-plan a{border-top-color:#C9A100}.s-done a{border-top-color:var(--done)}
+.inc{background:var(--late-bg);border:1px solid #F1B5A8;border-left:6px solid var(--late);border-radius:var(--r);padding:4px 16px 16px;margin-top:20px}
+.inc ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.inc li{display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid #F1B5A8;border-radius:8px;padding:10px 12px}
+.inc p{margin:2px 0 0;color:var(--muted)}
+.go{flex:none;background:var(--late);color:#fff;text-decoration:none;font-weight:600;padding:10px 14px;border-radius:8px}
+.note{margin:0 0 10px;color:var(--muted)}
+.d{background:var(--surface);border:1px solid var(--border);border-left:6px solid;border-radius:var(--r);margin-bottom:8px}
+.d.late{border-left-color:var(--late)}.d.route{border-left-color:var(--route)}.d.plan{border-left-color:#C9A100}.d.done{border-left-color:var(--done)}
+.d:target{box-shadow:0 0 0 3px var(--accent)}
+summary{display:grid;grid-template-columns:80px 1fr 64px 170px;gap:12px;align-items:center;padding:12px 14px;min-height:52px;cursor:pointer}
+summary:hover{background:#f1f5fa}
+.id,.time{font:600 .95rem ui-monospace,"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.dest{font-weight:600}
+.chip{justify-self:start;font-size:.85rem;font-weight:700;padding:2px 10px;border-radius:99px;border:1px solid}
+.late .chip{color:var(--late);background:var(--late-bg)}.route .chip{color:var(--route);background:#EAF0FE}.plan .chip{color:var(--plan);background:#FFF7D1}.done .chip{color:var(--done);background:#E7F6EC}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px;margin:0;padding:12px 14px 14px;border-top:1px solid var(--border)}
+dt{color:var(--muted)}dd{margin:0;font-weight:600}
+@media(max-width:640px){
+main{padding:12px}
+.top-in{padding:6px 12px}nav{margin:0;width:100%}nav ul{display:grid;grid-template-columns:repeat(3,1fr)}nav a{text-align:center}
+html{scroll-padding-top:110px}
+.sum{grid-template-columns:repeat(2,1fr)}
+.inc li{flex-direction:column;align-items:stretch}.go{text-align:center}
+summary{grid-template-columns:1fr auto;gap:2px 8px}
+.dest{grid-column:1/-1;grid-row:2}
+.chip{grid-column:1/-1;grid-row:3;margin-top:4px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
